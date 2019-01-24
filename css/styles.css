@@ -1,0 +1,834 @@
+@charset "UTF-8";
+
+/*//////////////////////////////////////////////////////////////////////////////
+
+styles.css
+
+--------------------------------------------------------------------------------
+
+ 000. common
+ 001. header
+ 002. nav
+ 003. content-profile
+ 004. content-present
+ 005. content-item
+ 006. content-photo
+ 007. footer
+ 008. imagelightbox
+
+//////////////////////////////////////////////////////////////////////////////*/
+
+/* 000. common
+ * サイトで共通のスタイルを定義します
+ * ========================================================================== */
+body {
+	height                : 100% !important;
+	color                 : #2d2d2d;
+	font-family           : 'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+	background            : url(../img/bg-body.jpg) no-repeat 0 0;
+	background-size       : cover;
+	background-attachment : fixed;
+	}
+
+/* 001. header
+ * ヘッダーのスタイルを定義します
+ * ========================================================================== */
+#header {
+	padding : 10px;
+	}
+	#header .container {
+		position      : relative;
+		padding       : 10px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		background    : rgba(255,255,255,0.4);
+		}
+		#header .jumbotron {
+			display         : table;
+			width           : 100%;
+			margin-bottom   : 0;
+			padding-top     : 20px;
+			padding-bottom  : 20px;
+			background      : url(../img/image-main.jpg) no-repeat 0 0;
+			background-size : 100% auto;
+			}
+			#header .jumbotron > .inner {
+				display         : table-cell;
+				vertical-align  : middle;
+				}
+				#header h1 {
+					margin-top  : 0;
+					color       : #ffffff;
+					font-size   : 22px;
+					font-family : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+					font-weight : 700;
+					text-shadow : 0 0 5px rgba(0,0,0,0.8);
+					}
+				#header p {
+					margin-bottom : 0;
+					color         : #ffffff;
+					font-size     : 14px;
+					text-shadow   : 0 0 5px rgba(0,0,0,0.8);
+					}
+		#header .navbar-toggle {
+			position      : absolute;
+			right         : 20px;
+			top           : 20px;
+			float         : none;
+			width         : 40px;
+			height        : 40px;
+			margin        : 0;
+			padding       : 9px 8px;
+			border-radius : 20px;
+			background    : #ffffff;
+			}
+			#header .navbar-toggle .icon-bar {
+				height     : 3px;
+				background : #999999;
+				}
+
+@media (min-width : 480px) {
+#header {
+	padding : 20px 20px 10px 20px;
+	}
+	#header .container {}
+		#header .jumbotron {
+			padding-top    : 40px;
+			padding-bottom : 40px;
+			}
+			#header h1 {
+				font-size : 30px;
+				}
+			#header p {
+				font-size : 20px;
+				}
+}
+@media (min-width : 768px) {
+#header {}
+	#header .container {}
+		#header .jumbotron {
+			padding : 80px 20px;
+			}
+			#header h1 {
+				font-size : 42px;
+				}
+			#header p {
+				margin-top : 20px;
+				font-size  : 22px;
+				}
+}
+@media (min-width : 992px) {
+#header {}
+	#header .container {}
+		#header .jumbotron {
+			padding : 120px 20px;
+			}
+			#header h1 {
+				font-size : 52px;
+				}
+}
+@media (min-width : 1200px) {
+#header {}
+	#header .container {}
+		#header .jumbotron {
+			padding : 140px 40px;
+			}
+			#header h1 {
+				font-size : 63px;
+				}
+			#header p {
+				margin-top : 30px;
+				font-size  : 26px;
+				}
+}
+
+/* 002. nav
+ * ナビゲーションのスタイルを定義します
+ * ========================================================================== */
+#nav {
+	display : none;
+	}
+#navsp {
+	border-top : none;
+	background : rgba(0,0,0,0.3);
+	box-shadow : 0 0 8px rgba(0,0,0,0.4) inset;
+	}
+	#navsp .nav {}
+		#navsp .nav > li {}
+		#navsp .nav > li.active {
+			background : rgba(0,0,0,0.5);
+			}
+			#navsp .nav > li a {
+				color         : #ffffff;
+				font-family   : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+				font-size     : 18px;
+				font-weight   : 400;
+				}
+
+@media (min-width : 480px) {}
+@media (min-width : 768px) {
+#nav {
+	display       : block;
+	position      : relative;
+	width         : 100%;
+	margin-bottom : 0;
+	border        : none;
+	border-radius : 0;
+	box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+	}
+.fixedMenu #nav {
+	position : fixed;
+	top      : 0;
+	z-index  : 10;
+	}
+	#nav .nav {
+		float          : none;
+		width          : 100%;
+		padding-top    : 5px;
+		padding-bottom : 5px;
+		text-align     : center;
+		}
+		#nav .nav > li {
+			display : inline-block;
+			float   : none;
+			}
+		#nav .nav > li + li {
+			margin-left : 30px;
+			}
+			#nav .nav > li a {
+				padding       : 10px 40px;
+				border-radius : 6px;
+				font-family   : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+				font-size     : 22px;
+				font-weight   : 400;
+				}
+#navsp {
+	display : none !important;
+	}
+}
+
+/* 003. content-profile
+ * Profileのスタイルを定義します
+ * ========================================================================== */
+#content-profile {
+	padding : 10px;
+	}
+.fixedMenu #content-profile {
+	margin-top : 50px;
+	}
+	#content-profile .container {
+		position      : relative;
+		padding       : 20px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		background    : rgba(255,255,255,0.4);
+		}
+		#content-profile h1 {
+			margin         : 0;
+			color          : #333333;
+			font-family    : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size      : 42px;
+			font-weight    : 700;
+			line-height    : 1;
+			letter-spacing : 0.1em;
+			}
+			#content-profile h1:after {
+				content        : "";
+				display        : inline-block;
+				position       : relative;
+				top            : -3px;
+				width          : 18px;
+				height         : 6px;
+				margin-left    : 0.1em;
+				border-radius  : 3px;
+				vertical-align : middle;
+				background     : #f0b209;
+				}
+		#content-profile h2 {
+			font-family : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size   : 24px;
+			font-weight : 400;
+			}
+		#content-profile .section-data {
+			padding       : 20px;
+			border-radius : 8px;
+			background    : rgba(255,255,255,0.8);
+			box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+			}
+			#content-profile .section-data > dl {
+				display : table;
+				width   : 100%;
+				margin  : 0;
+				}
+			#content-profile .section-data > dl + dl {
+				margin-top : 10px;
+				}
+				#content-profile .section-data > dl dt {
+					display : table-cell;
+					width   : 5em;
+					}
+				#content-profile .section-data > dl dd {
+					display      : table-cell;
+					padding-left : 1em;
+					text-indent  : -1em;
+					}
+		#content-profile .table {
+			margin-bottom : 0;
+			border-color  : #999999;
+			}
+			#content-profile .table th,
+			#content-profile .table td {
+				border-color : inherit;
+				}
+
+@media (min-width : 480px) {
+#content-profile {
+	padding : 10px 20px 20px 20px;
+	}
+}
+
+/* 004. content-present
+ * Presentのスタイルを定義します
+ * ========================================================================== */
+#content-present {
+	padding : 10px;
+	}
+	#content-present .container {
+		position      : relative;
+		padding       : 20px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		background    : rgba(255,255,255,0.4);
+		}
+		#content-present h1 {
+			margin-top     : 0;
+			color          : #333333;
+			font-family    : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size      : 42px;
+			font-weight    : 700;
+			line-height    : 1;
+			letter-spacing : 0.1em;
+			}
+			#content-present h1:after {
+				content        : "";
+				display        : inline-block;
+				position       : relative;
+				top            : -3px;
+				width          : 18px;
+				height         : 6px;
+				margin-left    : 0.1em;
+				border-radius  : 3px;
+				vertical-align : middle;
+				background     : #f0b209;
+				}
+		#content-present .col-xs-12 + .col-xs-12 {
+			margin-top : 10px;
+			}
+		#content-present .section-data {
+			padding       : 20px;
+			border-radius : 8px;
+			background    : rgba(255,255,255,0.8);
+			box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+			-webkit-box-sizing : border-box;
+			-moz-box-sizing    : border-box;
+			box-sizing         : border-box;
+			}
+			#content-present h2 {
+				margin-top     : 0;
+				margin-bottom  : 0.5em;
+				font-family    : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+				font-size      : 20px;
+				font-weight    : 700;
+				line-height    : 1.2;
+				}
+				#content-present h2 br {
+					display : block;
+					}
+
+@media (min-width : 480px) {
+#content-present {
+	padding : 10px 20px 20px 20px;
+	}
+	#content-present .section-data {}
+		#content-present h2 {
+			font-size : 28px;
+			}
+			#content-present h2 br {
+				display : block;
+					}
+}
+@media (min-width : 768px) {}
+@media (min-width : 992px) {
+#content-present {}
+	#content-present .col-xs-12 + .col-xs-12 {
+		margin-top : 0;
+		}
+}
+@media (min-width : 1200px) {}
+
+/* 005. content-item
+ * Itemのスタイルを定義します
+ * ========================================================================== */
+#content-item {
+	padding : 10px;
+	}
+	#content-item .container {
+		position      : relative;
+		padding       : 20px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		background    : rgba(255,255,255,0.4);
+		}
+		#content-item h1 {
+			margin-top     : 0;
+			color          : #333333;
+			font-family    : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size      : 42px;
+			font-weight    : 700;
+			line-height    : 1;
+			letter-spacing : 0.1em;
+			}
+			#content-item h1:after {
+				content        : "";
+				display        : inline-block;
+				position       : relative;
+				top            : -3px;
+				width          : 18px;
+				height         : 6px;
+				margin-left    : 0.1em;
+				border-radius  : 3px;
+				vertical-align : middle;
+				background     : #f0b209;
+				}
+		#content-item h2 {
+			font-family : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size   : 24px;
+			font-weight : 400;
+			}
+		#content-item h3 {
+			font-family : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			}
+		#content-item .section-data {
+			padding       : 20px;
+			border-radius : 8px;
+			background    : rgba(255,255,255,0.8);
+			box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+			}
+		#content-item .table {
+			margin-bottom : 0;
+			border-color  : #999999;
+			}
+			#content-item .table th,
+			#content-item .table td {
+				border-color : inherit;
+				}
+			#content-item .table th {
+				width : 5em;
+				}
+
+@media (min-width : 480px) {
+#content-item {
+	padding : 10px 20px 20px 20px;
+	}
+}
+@media (min-width : 768px) {}
+@media (min-width : 992px) {}
+@media (min-width : 1200px) {}
+
+/* 006. content-photo
+ * Photoのスタイルを定義します
+ * ========================================================================== */
+#content-photo {
+	padding : 10px;
+	}
+	#content-photo .container {
+		position      : relative;
+		padding       : 20px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		background    : rgba(255,255,255,0.4);
+		}
+		#content-photo h1 {
+			margin         : 0;
+			color          : #333333;
+			font-family    : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+			font-size      : 42px;
+			font-weight    : 700;
+			line-height    : 1;
+			letter-spacing : 0.1em;
+			}
+			#content-photo h1:after {
+				content        : "";
+				display        : inline-block;
+				position       : relative;
+				top            : -3px;
+				width          : 18px;
+				height         : 6px;
+				margin-left    : 0.1em;
+				border-radius  : 3px;
+				vertical-align : middle;
+				background     : #f0b209;
+				}
+		#photos {
+			margin-top : 20px;
+			}
+			#photos .item {
+				display : block;
+				float   : left;
+				width   : 100%;
+				color   : #333333;
+				}
+			#photos .item:hover {
+				color           : #333333;
+				text-decoration : none;
+				}
+				#photos .item .inner {
+					padding : 5px;
+					}
+					#photos .item .item-inner {
+						padding       : 10px;
+						border-radius : 6px;
+						background    : rgba(255,255,255,0.8);
+						box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+						}
+						#photos .item img {
+							width  : 100%;
+							height : auto;
+							}
+						#photos .item .title {
+							margin-top  : 10px;
+							font-family : "Dosis",'メイリオ', Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'ＭＳ Ｐゴシック', sans-serif;
+							font-size   : 18px;
+							font-weight : bold;
+							}
+						#photos .item .caption {
+							margin : 0;
+							}
+
+@media (min-width : 480px) {
+#content-photo {
+	padding : 10px 20px 20px 20px;
+	}
+}
+@media (min-width : 768px) {
+#content-photo {}
+	#content-photo .container {}
+		#photos {}
+		#photos .item {
+			width : 282px;
+			}
+}
+
+/* 007. footer
+ * footerのスタイルを定義します
+ * ========================================================================== */
+#footer {
+	margin-top: 60px;
+	padding : 10px;
+	}
+	#footer .container {
+		position      : relative;
+		padding       : 20px;
+		border-radius : 10px;
+		box-shadow    : 0 0 6px rgba(0,0,0,0.4);
+		text-align    : center;
+		background    : rgba(255,255,255,0.8);
+		}
+		#footer .btn-pagetop {
+			display         : block;
+			position        : fixed;
+			right           : 10px;
+			bottom          : 20px;
+			width           : 60px;
+			height          : 60px;
+			padding-top     : 22px;
+			border-radius   : 30px;
+			color           : #000000;
+			font-size       : 12px;
+			line-height     : 1.2;
+			text-decoration : none;
+			background      : rgba(255,255,255,0.8);
+			box-shadow      : 0 0 6px rgba(0,0,0,0.4);
+			-webkit-box-sizing : border-box;
+			-moz-box-sizing    : border-box;
+			box-sizing         : border-box;
+			}
+			#footer .btn-pagetop > span {
+				position    : absolute;
+				left        : 50%;
+				top         : 8px;
+				margin-left : -6px;
+				}
+			#footer .btn-pagetop br {
+				display : block;
+				}
+		#footer p {
+			margin     : 5px 0 0 0;
+			}
+		#footer small {
+			margin      : 0;
+			font-size   : 10px;
+			line-height : 10px;
+			text-align  : center;
+			}
+
+@media (min-width : 480px) {
+#footer {
+	margin-top : 50px;
+	padding    : 10px 20px 20px 20px;
+	}
+	#footer .container {
+		padding : 20px;
+		}
+		#footer p {
+			margin     : 5px 0 0 0;
+			}
+		#footer small {
+			font-size   : 85%;
+			line-height : 1.2;
+			}
+		#footer br {
+			display : none;
+			}
+}
+
+/* 008. imagelightbox
+ * lightboxのスタイルを定義します
+ * ========================================================================== */
+#imagelightbox {
+	cursor   : pointer;
+	position : fixed;
+	z-index  : 10000;
+	-ms-touch-action : none;
+	touch-action     : none;
+	-webkit-box-shadow : 0 0 3.125em rgba( 0, 0, 0, .75 );
+	box-shadow         : 0 0 3.125em rgba( 0, 0, 0, .75 );
+	}
+	button {
+		border : none;
+		}
+	/* ACTIVITY INDICATION */
+	#imagelightbox-loading,
+	#imagelightbox-loading div {
+		border-radius: 50%;
+		}
+		#imagelightbox-loading {
+			width: 2.5em; /* 40 */
+			height: 2.5em; /* 40 */
+			background-color: #444;
+			background-color: rgba( 0, 0, 0, .5 );
+			position: fixed;
+			z-index: 10003;
+			top: 50%;
+			left: 50%;
+			padding: 0.625em; /* 10 */
+			margin: -1.25em 0 0 -1.25em; /* 20 */
+
+			-webkit-box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+			box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+			}
+			#imagelightbox-loading div {
+				width: 1.25em;
+				height: 1.25em;
+				background-color: #fff;
+
+				-webkit-animation: imagelightbox-loading .5s ease infinite;
+				animation: imagelightbox-loading .5s ease infinite;
+				}
+
+			@-webkit-keyframes imagelightbox-loading {
+				from { opacity: .5;	-webkit-transform: scale( .75 ); }
+				50%	 { opacity: 1;	-webkit-transform: scale( 1 ); }
+				to	 { opacity: .5;	-webkit-transform: scale( .75 ); }
+				}
+			@keyframes imagelightbox-loading {
+				from { opacity: .5;	transform: scale( .75 ); }
+				50%	 { opacity: 1;	transform: scale( 1 ); }
+				to	 { opacity: .5;	transform: scale( .75 ); }
+				}
+		/* OVERLAY */
+		#imagelightbox-overlay {
+			background-color: #fff;
+			background-color: rgba( 255, 255, 255, .9 );
+			position: fixed;
+			z-index: 9998;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			}
+		/* "CLOSE" BUTTON */
+		#imagelightbox-close {
+			width: 2.5em; /* 40 */
+			height: 2.5em; /* 40 */
+			text-align: left;
+			background-color: #666;
+			border-radius: 50%;
+			position: fixed;
+			z-index: 10002;
+			top: 2.5em; /* 40 */
+			right: 2.5em; /* 40 */
+
+			-webkit-transition: color .3s ease;
+			transition: color .3s ease;
+			}
+			#imagelightbox-close:hover,
+			#imagelightbox-close:focus {
+				background-color: #111;
+				}
+			#imagelightbox-close:before,
+			#imagelightbox-close:after {
+				width: 2px;
+				background-color: #fff;
+				content: '';
+				position: absolute;
+				top: 20%;
+				bottom: 20%;
+				left: 50%;
+				margin-left: -1px;
+				}
+			#imagelightbox-close:before {
+				-webkit-transform: rotate( 45deg );
+				-ms-transform: rotate( 45deg );
+				transform: rotate( 45deg );
+				}
+			#imagelightbox-close:after {
+				-webkit-transform: rotate( -45deg );
+				-ms-transform: rotate( -45deg );
+				transform: rotate( -45deg );
+				}
+		/* CAPTION */
+		#imagelightbox-caption {
+			text-align: center;
+			color: #fff;
+			background-color: #666;
+			position: fixed;
+			z-index: 10001;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 0.625em; /* 10 */
+			}
+		/* NAVIGATION */
+		#imagelightbox-nav {
+			background-color: #444;
+			background-color: rgba( 0, 0, 0, .5 );
+			border-radius: 20px;
+			position: fixed;
+			z-index: 10001;
+			left: 50%;
+			bottom: 3.75em; /* 60 */
+			padding: 0.313em; /* 5 */
+
+			-webkit-transform: translateX( -50% );
+			-ms-transform: translateX( -50% );
+			transform: translateX( -50% );
+			}
+			#imagelightbox-nav button {
+				width: 1em; /* 20 */
+				height: 1em; /* 20 */
+				background-color: transparent;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				display: inline-block;
+				margin: 0 0.313em; /* 5 */
+				}
+			#imagelightbox-nav button.active {
+				background-color: #fff;
+				}
+		/* ARROWS */
+		.imagelightbox-arrow {
+			width: 3.75em; /* 60 */
+			height: 7.5em; /* 120 */
+			background-color: #444;
+			background-color: rgba( 0, 0, 0, .5 );
+			vertical-align: middle;
+			display: none;
+			position: fixed;
+			z-index: 10001;
+			top: 50%;
+			margin-top: -3.75em; /* 60 */
+			}
+		.imagelightbox-arrow:hover,
+		.imagelightbox-arrow:focus {
+			background-color: #666;
+			background-color: rgba( 0, 0, 0, .75 );
+			}
+		.imagelightbox-arrow:active {
+			background-color: #111;
+			}
+			.imagelightbox-arrow-left {
+				left: 2.5em; /* 40 */
+				}
+			.imagelightbox-arrow-right {
+				right: 2.5em; /* 40 */
+				}
+			.imagelightbox-arrow:before {
+				width: 0;
+				height: 0;
+				border: 1em solid transparent;
+				content: '';
+				display: inline-block;
+				margin-bottom: -0.125em; /* 2 */
+				}
+				.imagelightbox-arrow-left:before {
+					border-left: none;
+					border-right-color: #fff;
+					margin-left: -0.313em; /* 5 */
+					}
+				.imagelightbox-arrow-right:before {
+					border-right: none;
+					border-left-color: #fff;
+					margin-right: -0.313em; /* 5 */
+					}
+		#imagelightbox-loading,
+		#imagelightbox-overlay,
+		#imagelightbox-close,
+		#imagelightbox-caption,
+		#imagelightbox-nav,
+		.imagelightbox-arrow {
+			-webkit-animation: fade-in .25s linear;
+			animation: fade-in .25s linear;
+			}
+			@-webkit-keyframes fade-in {
+				from	{ opacity: 0; }
+				to		{ opacity: 1; }
+				}
+			@keyframes fade-in {
+				from	{ opacity: 0; }
+				to		{ opacity: 1; }
+				}
+
+		@media only screen and (max-width: 41.250em) {
+			#container {
+				width: 100%;
+				}
+			#imagelightbox-close {
+				top: 1.25em; /* 20 */
+				right: 1.25em; /* 20 */
+				}
+			#imagelightbox-nav {
+				bottom: 1.25em; /* 20 */
+				}
+
+			.imagelightbox-arrow {
+				width: 2.5em; /* 40 */
+				height: 3.75em; /* 60 */
+				margin-top: -2.75em; /* 30 */
+				}
+			.imagelightbox-arrow-left {
+				left: 1.25em; /* 20 */
+				}
+			.imagelightbox-arrow-right {
+				right: 1.25em; /* 20 */
+				}
+		}
+
+		@media only screen and (max-width: 20em) {
+			.imagelightbox-arrow-left {
+				left: 0;
+				}
+			.imagelightbox-arrow-right {
+				right: 0;
+				}
+		}
